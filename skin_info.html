@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skin Disease Information • Skin AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+     <video autoplay muted loop id="bg-video">
+        <source src="{{ url_for('static', filename='videos/medical-bg.mp4') }}" type="video/mp4">
+    </video>
+<div class="dashboard">
+     
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+       
+
+        <h2>🧠 Skin AI System</h2>
+        <p>AI-powered skin disease detection platform.</p>
+        <ul>
+            <li onclick="location.href='/home'">Home</li>
+            <li onclick="location.href='/upload'">Disease Prediction</li>
+            <li>Skin Disease Info</li>
+        </ul>
+    </aside>
+
+    <!-- CONTENT -->
+    <div class="page-content">
+        <header>Skin Disease & Skin Cancer Information</header>
+
+        <div class="result-panel">
+
+            <h2>What are Skin Diseases?</h2>
+            <p>
+                Skin diseases are medical conditions that affect the skin’s structure, appearance, or function.
+                They can be caused by infections, allergies, immune system disorders, environmental exposure,
+                or genetic factors. Early detection is important to prevent complications.
+            </p>
+
+            <h2>Common Types of Skin Diseases</h2>
+            <ul>
+                <li><strong>Melanoma:</strong> A dangerous form of skin cancer that develops from pigment-producing cells.</li>
+                <li><strong>Basal Cell Carcinoma:</strong> Most common skin cancer, usually caused by sun exposure.</li>
+                <li><strong>Actinic Keratosis:</strong> Rough, scaly patches caused by UV damage; can become cancerous.</li>
+                <li><strong>Benign Keratosis:</strong> Non-cancerous growths common in aging skin.</li>
+                <li><strong>Dermatofibroma:</strong> Small, firm, benign skin nodules.</li>
+                <li><strong>Vascular Lesions:</strong> Abnormal blood vessel growths in the skin.</li>
+            </ul>
+
+            <h2>What is Skin Cancer?</h2>
+            <p>
+                Skin cancer occurs when skin cells grow abnormally, often due to excessive exposure to ultraviolet (UV) radiation.
+                Early detection greatly increases survival rates.
+            </p>
+
+            <h3>Major Types of Skin Cancer</h3>
+            <ul>
+                <li><strong>Melanoma:</strong> Spreads quickly; can be life-threatening.</li>
+                <li><strong>Basal Cell Carcinoma:</strong> Slow-growing but can damage tissues.</li>
+                <li><strong>Squamous Cell Carcinoma:</strong> Can spread if untreated.</li>
+            </ul>
+
+           <div class="abcde-box">
+            <ul>
+                <li><strong>A — Asymmetry:</strong> One half unlike the other.</li>
+                <li><strong>B — Border:</strong> Irregular, blurred edges.</li>
+                <li><strong>C — Color:</strong> Multiple colors or uneven tone.</li>
+                <li><strong>D — Diameter:</strong> Larger than 6mm.</li>
+                <li><strong>E — Evolving:</strong> Changes in size, shape, or symptoms.</li>
+            </ul>
+        </div>
+
+
+            <h2>Prevention Tips</h2>
+            <ul>
+                <li>Use sunscreen (SPF 30+)</li>
+                <li>Avoid excessive sun exposure</li>
+                <li>Wear protective clothing</li>
+                <li>Regular skin self-examination</li>
+                <li>Consult a dermatologist for suspicious lesions</li>
+            </ul>
+
+            <h2>Medical Disclaimer</h2>
+            <p>
+                This system provides AI-based analysis for educational and research purposes only.
+                It is not a substitute for professional medical diagnosis. Always consult a dermatologist.
+            </p>
+
+        </div>
+    </div>
+
+</div>
+
+    <script>
+const toggleBtn = document.querySelector(".sidebar-toggle-btn");
+const sidebar = document.querySelector(".sidebar");
+const content = document.querySelector(".page-content");
+
+toggleBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("collapsed");
+    content.classList.toggle("expanded");
+
+    toggleBtn.textContent = sidebar.classList.contains("collapsed") ? "❯❯" : "❮❮";
+});
+</script>
+
+
+
+
+</body>
+</html>
