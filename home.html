@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home • Skin Disease System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <video autoplay muted loop id="bg-video">
+        <source src="{{ url_for('static', filename='videos/medical-bg.mp4') }}" type="video/mp4">
+    </video>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2>🧠 Skin AI System</h2>
+        <p>AI-powered platform for early detection of skin diseases using deep learning.</p>
+
+        <ul>
+            <li onclick="location.href='/home'">Home</li>
+            <li onclick="location.href='/upload'">Disease Prediction</li>
+            <li onclick="location.href='/skin-info'">Skin Disease Info</li>
+            <li>About Project</li>
+        </ul>
+    </aside>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+
+        <header>AI Healthcare Intelligence Dashboard</header>
+
+        <h2>Welcome to the AI Skin Disease Detection System</h2>
+        <p>
+            This platform uses Convolutional Neural Networks (CNN) trained on the HAM10000 dataset 
+            to analyze dermoscopic skin images and classify them into multiple disease categories. 
+            The system helps in early detection, awareness, and decision support.
+        </p>
+
+        <div class="image-panel">
+            <div class="image-card">
+                <h3>AI-Based Skin Analysis</h3>
+                <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b" alt="Skin Analysis">
+                <p>Advanced deep learning algorithms analyze lesion patterns and textures.</p>
+            </div>
+
+            <div class="image-card">
+                <h3>Medical Research Support</h3>
+                <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67" alt="Medical AI">
+                <p>Supports dermatology research and awareness in underserved areas.</p>
+            </div>
+        </div>
+
+        <div class="result-panel">
+            <h2>System Capabilities</h2>
+            <ul style="text-align:left; line-height:1.8;">
+                <li>✔ Deep Learning-based skin disease classification</li>
+                <li>✔ Real-time AI prediction with confidence score</li>
+                <li>✔ Grad-CAM explainability visualization</li>
+                <li>✔ Medical symptoms and guidance information</li>
+                <li>✔ Secure web-based access</li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
