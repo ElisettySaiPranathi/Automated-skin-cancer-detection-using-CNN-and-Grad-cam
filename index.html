@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skin Disease Detection</title>
+</head>
+<body style="text-align:center; font-family:Arial;">
+
+    <h2>Upload Skin Lesion Image</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <br><br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <h3>Prediction: {{ prediction }}</h3>
+        <h3>Confidence: {{ confidence }}%</h3>
+        <img src="{{ img_path }}" width="300">
+    {% endif %}
+
+            {% if prediction %}
+            <div style="margin-top:20px; padding:15px; border-radius:10px; background:#f0f8ff;">
+                <h3>🩺 Symptoms</h3>
+                <p>{{ symptoms }}</p>
+
+                <h3>💡 Medical Advice</h3>
+                <p>{{ advice }}</p>
+            </div>
+            {% endif %}
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login • Skin Disease System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <video autoplay muted loop id="bg-video">
+        <source src="{{ url_for('static', filename='videos/medical-bg.mp4') }}" type="video/mp4">
+    </video>
+<div class="dashboard">
+    <aside class="sidebar">
+        <h2>🧠 Skin AI System</h2>
+        <p>AI-powered skin disease detection platform.</p>
+        <ul>
+            <li>Home</li>
+            <li>Disease Prediction</li>
+            <li>About Project</li>
+        </ul>
+    </aside>
+
+   <div class="page-content">
+    <div class="auth-box">
+        <h2>System Login</h2>
+        <form action="/home" method="get">
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <button>Enter AI System</button>
+        </form>
+    </div>
+</div>
+
+</div>
+
+</body>
+</html>

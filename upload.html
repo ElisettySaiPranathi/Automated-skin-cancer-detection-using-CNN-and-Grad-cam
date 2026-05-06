@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Image • Skin Disease System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<!-- Background Video -->
+    <video autoplay muted loop id="bg-video">
+        <source src="{{ url_for('static', filename='videos/medical-bg.mp4') }}" type="video/mp4">
+    </video>
+
+
+<div class="dashboard">
+    <aside class="sidebar">
+        <h2>🧠 Skin AI System</h2>
+        <p>Upload dermoscopic image for AI analysis.</p>
+        <ul>
+            <li onclick="location.href='/home'">Home</li>
+            <li>Disease Prediction</li>
+        </ul>
+    </aside>
+
+    <div class="page-content">
+        <header>Upload Skin Lesion Image</header>
+        <div class="auth-box">
+            <form action="/predict" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" required>
+                <button>Predict</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

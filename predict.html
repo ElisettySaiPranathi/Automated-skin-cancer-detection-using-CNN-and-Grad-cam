@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction • Skin Disease System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <video autoplay muted loop id="bg-video">
+        <source src="{{ url_for('static', filename='videos/medical-bg.mp4') }}" type="video/mp4">
+    </video>
+<div class="dashboard">
+    <aside class="sidebar">
+        <h2>🧠 Skin AI System</h2>
+        <p>AI-powered skin disease prediction with explainable medical insights.</p>
+
+        <ul>
+            <li onclick="location.href='/home'">Home</li>
+            <li onclick="location.href='/upload'">New Analysis</li>
+        </ul>
+    </aside>
+
+    <div class="page-content">
+        <header>Skin Disease Prediction</header>
+
+        {% if img_path %}
+        <div class="image-panel">
+            <div class="image-card">
+                <h3>Uploaded Image</h3>
+                <img src="{{ img_path }}">
+            </div>
+
+            {% if gradcam_path %}
+            <div class="image-card">
+                <h3>Grad-CAM Visualization</h3>
+                <img src="{{ gradcam_path }}">
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+
+        {% if prediction %}
+        <div class="result-panel">
+            <h2>Predicted Skin Condition: {{ prediction }}</h2>
+            <div class="confidence-bar">
+                <div class="confidence-fill" style="width: '{{ confidence }}%';"></div>
+            </div>
+            <p>Confidence: {{ confidence }}%</p>
+            <div class="info-flex">
+
+    <div class="info-box symptoms-box">
+        <h4>Symptoms</h4>
+        <p>Irregular borders, color variation.</p>
+    </div>
+
+    <div class="info-box advice-box">
+        <h4>Medical Advice</h4>
+        <p>URGENT: Consult dermatologist.</p>
+    </div>
+
+</div>
+
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+</body>
+</html>
